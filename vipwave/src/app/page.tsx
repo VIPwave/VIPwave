@@ -18,6 +18,11 @@ export default function Home() {
       <div className="p-4 bg-gradient-to-t to-primary/20 from-transparent">
         <TodoList title="TODOLIST" />
         <NoticeList title="음원총공팀에서 알립니다" />
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/JL9SinfW_-4?si=ejuwt0zcSiWoErAe"
+                title="YouTube video player" frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen></iframe>
       </div>
     </>
   );
