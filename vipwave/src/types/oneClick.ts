@@ -1,7 +1,7 @@
 export type DeviceType = 'ANDROID' | 'IPHONE' | 'IPAD' | 'WINDOWS' | 'MAC';
 
 export interface LinkGroup {
-  device_type: DeviceType;
+  deviceType: DeviceType;
   links: string[];
 }
 
@@ -12,10 +12,10 @@ export interface PlatformData {
   id: number;
   platform: PlatformType;
   logo: string;
-  chart_type: ChartType;
+  chartType: ChartType;
   links: LinkGroup[];
-  staff_no: string;
-  update_at: string;
+  staffNo: string;
+  updatedAt: string;
 }
 
 export type OneClickLinksResponse = {

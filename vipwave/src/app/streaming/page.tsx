@@ -1,9 +1,10 @@
 'use client';
 
+import { fetchOneClickLinks } from '@/apis/fetchOneClick';
 import BlockBtn from '@/components/Button/BlockBtn';
 import Modal from '@/lib/components/modal/modal';
 import { getDeviceType } from '@/lib/detectDevice';
-import { globalStreamingLinks, streamingLinks } from '@/lib/streamingLinks';
+import { ChartType, DeviceType, PlatformData } from '@/types/oneClick';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
@@ -16,6 +17,7 @@ interface streamingLink {
   windowLinks?: string[];
   macLinks?: string[];
   links?: string[];
+  chartType?: ChartType;
 }
 
 export default function StreamingPage() {
@@ -28,6 +30,7 @@ export default function StreamingPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [deviceType, setDeviceType] = useState<string>('');
   const [imageLoaded, setImageLoaded] = useState(false);
+  const [streamingData, setStreamingData] = useState<streamingLink[]>([]);
 
   useEffect(() => {
     setDeviceType(getDeviceType());
@@ -75,6 +78,43 @@ export default function StreamingPage() {
     setIsModalOpen(true);
   };
 
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetchOneClickLinks();
+      const data: PlatformData[] = res?.data || [];
+
+      const transformed = data.map((platform) => {
+        const deviceLinksMap: Record<DeviceType, string[]> = {
+          ANDROID: [],
+          IPHONE: [],
+          IPAD: [],
+          WINDOWS: [],
+          MAC: [],
+        };
+
+        platform.links.forEach((group) => {
+          deviceLinksMap[group.deviceType] = group.links;
+        });
+
+        return {
+          name: platform.platform,
+          logo: platform.logo,
+          androidLinks: deviceLinksMap.ANDROID,
+          iphoneLinks: deviceLinksMap.IPHONE,
+          ipadLinks: deviceLinksMap.IPAD,
+          windowLinks: deviceLinksMap.WINDOWS,
+          macLinks: deviceLinksMap.MAC,
+          links: [],
+          chartType: platform.chartType,
+        };
+      });
+
+      setStreamingData(transformed);
+    };
+
+    fetchData();
+  }, []);
+
   const handleButtonClick = (link: string) => {
     window.open(link, '_blank');
   };
@@ -91,26 +131,30 @@ export default function StreamingPage() {
       <p className="text-sm break-keep">{`☑️ 설정 > "재생목록 맨끝에 추가" 변경`}</p>
       <p className="mb-4 text-sm break-keep">☑️ 음원 다운로드 파일 삭제</p>
       <div className="grid grid-cols-2 gap-5 w-full mb-8">
-        {streamingLinks.map((site) => (
-          <BlockBtn
-            key={site.name}
-            text={site.name}
-            iconSrc={site.logo}
-            onClick={() => openModal(site, true)}
-          />
-        ))}
+        {streamingData
+          .filter((site) => site.chartType === 'DOMESTIC')
+          .map((site) => (
+            <BlockBtn
+              key={site.name}
+              text={site.name}
+              iconSrc={site.logo}
+              onClick={() => openModal(site, true)}
+            />
+          ))}
       </div>
 
       <p className="font-bold text-sm mb-4 mt-8">해외 차트 스트리밍</p>
       <div className="grid grid-cols-2 gap-5 w-full mb-5">
-        {globalStreamingLinks.map((site) => (
-          <BlockBtn
-            key={site.name}
-            text={site.name}
-            iconSrc={site.logo}
-            onClick={() => openModal(site, false)}
-          />
-        ))}
+        {streamingData
+          .filter((site) => site.chartType === 'GLOBAL')
+          .map((site) => (
+            <BlockBtn
+              key={site.name}
+              text={site.name}
+              iconSrc={site.logo}
+              onClick={() => openModal(site, false)}
+            />
+          ))}
       </div>
       <hr className="my-5" />
       <p className="font-bold text-sm">스트리밍 리스트</p>

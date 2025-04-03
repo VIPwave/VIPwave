@@ -21,13 +21,13 @@ export const useOneClickStore = create<OneClickState>((set, get) => ({
   oneClickForm: {},
   editedLinks: {},
   originalLinks: {},
-  staff_no: '',
-  update_at: '',
+  staffNo: '',
+  updatedAt: '',
   initialize: async () => {
     const data = await fetchOneClickLinks();
     const entries = (data?.data || []).reduce<Record<string, PlatformData>>(
       (acc, item) => {
-        acc[item.platform] = item;
+        acc[item.platform.toLowerCase()] = item;
         return acc;
       },
       {}
@@ -37,11 +37,16 @@ export const useOneClickStore = create<OneClickState>((set, get) => ({
     const editedMap = {} as Record<string, Record<DeviceType, string[]>>;
 
     Object.entries(entries).forEach(([platform, item]) => {
-      originalMap[platform] = {} as Record<DeviceType, string[]>;
-      editedMap[platform] = {} as Record<DeviceType, string[]>;
+      const normalizedPlatform = platform.toLowerCase();
+
+      originalMap[normalizedPlatform] = {} as Record<DeviceType, string[]>;
+      editedMap[normalizedPlatform] = {} as Record<DeviceType, string[]>;
+
       item.links.forEach((group) => {
-        originalMap[platform][group.device_type] = [...group.links];
-        editedMap[platform][group.device_type] = group.links.map(() => '');
+        originalMap[normalizedPlatform][group.deviceType] = [...group.links];
+        editedMap[normalizedPlatform][group.deviceType] = group.links.map(
+          () => ''
+        );
       });
     });
 
