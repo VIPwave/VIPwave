@@ -1,5 +1,5 @@
 import Image from "next/image";
-import bigbangImg from "../../public/bang_1.jpeg";
+import bigbangImg from "../../public/daesung_1.jpeg";
 import TodoList from "@/lib/components/todoList/TodoList";
 import NoticeList from "@/lib/components/notice/Notice";
 
@@ -16,7 +16,7 @@ export default function Home() {
         />
       </div>
 
-      <div className="px-5 py-2 bg-gradient-to-t to-primary/20 from-transparent">
+      <div className="px-5 py-2 bg-gradient-to-t to-slate-300/20 from-transparent">
         <TodoList title="TODOLIST" />
         <NoticeList title="음원총공팀에서 알립니다" />
       </div>
