@@ -68,7 +68,7 @@ export const FILTERS: Record<TAB, Guide[]> = {
     { name: '멜론 캐시충전', images: ['/guide/download/melonMVDownload.jpg'] },
     { name: '멜론 PC', images: ['/guide/download/melonMVDownload3.jpg'] },
     { name: '멜론 Mobile', images: ['/guide/download/melonMVDownload2.jpg'] },
-    { name: '벅스 PC', images: ['/guide/download/bugsMVDownload.jpg'] },
+    { name: '벅스 PC', images: ['/guide/download/bugsMVDownload2.jpg'] },
   ],
   '선물 가이드': [
     { name: '공지사항', images: ['/guide/gift/melonGift.jpg'] },
