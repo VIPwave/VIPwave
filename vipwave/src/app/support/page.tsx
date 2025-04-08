@@ -1,17 +1,17 @@
-"use client";
+'use client';
 
-import IconButton from "@/components/ui/IconButton";
-import SupportForm from "@/lib/components/support/SupportForm";
-import { Copy } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
+import IconButton from '@/components/ui/IconButton';
+import SupportForm from '@/lib/components/support/SupportForm';
+import { Copy } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useState } from 'react';
 
 export default function SupportPage() {
   const [showToast, setShowToast] = useState(false);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText("카카오뱅크 3333-02-2695844").then(() => {
+    navigator.clipboard.writeText('카카오뱅크 3333-02-2695844').then(() => {
       setShowToast(true);
       setTimeout(() => setShowToast(false), 2000);
     });
@@ -23,13 +23,13 @@ export default function SupportPage() {
         title="[대성 컴백 대비] 총공 이벤트용 기부/모금"
         button={
           <Link
-            href={"https://naver.me/GL8kPDZ2"}
+            href={'https://naver.me/GL8kPDZ2'}
             target="_blank"
             className="flex w-full gap-4 px-4 py-3 items-center bg-chart text-white text-[16px] min-h-[60px] whitespace-normal break-words leading-tight"
           >
             <Image
               className="rounded-lg"
-              src={"/icons/icon.ico"}
+              src={'/icons/icon.ico'}
               alt={`vipwave logo`}
               width={30}
               height={30}
@@ -42,7 +42,7 @@ export default function SupportPage() {
       >
         <>
           <p className="mb-2">
-            4월 8일 발매 예정인{" "}
+            4월 8일 발매 예정인{' '}
             <span className="text-primary font-bold">
               대성 신곡 음원 서포트
             </span>
@@ -51,7 +51,7 @@ export default function SupportPage() {
             빅뱅음총팀에서 스밍 다운 독려를 위한 이벤트를 준비하고 있습니다.
           </p>
           많은 분들이 참여하고 싶은 이벤트를 준비하기 위해,
-          <br /> 운영비 모금 및 상품 기부를 진행하니 많은 관심 부탁드립니다!{" "}
+          <br /> 운영비 모금 및 상품 기부를 진행하니 많은 관심 부탁드립니다!{' '}
           <p className="mt-2">
             ✅ 참여 타입 : 모금 / 기프티콘 기부 / 굿즈 기부
           </p>
@@ -63,12 +63,12 @@ export default function SupportPage() {
           <>
             <Link
               className="flex w-full gap-4 px-4 py-3 items-center bg-chart text-white text-[16px] min-h-[60px]"
-              href={"https://naver.me/FK5UPdR7"}
+              href={'https://naver.me/FK5UPdR7'}
               target="_blank"
             >
               <Image
                 className="rounded-lg"
-                src={"/icons/bugs.png"}
+                src={'/icons/bugs.png'}
                 alt={`bugs logo`}
                 width={30}
                 height={30}
@@ -79,12 +79,12 @@ export default function SupportPage() {
             </Link>
             <Link
               className="flex w-full gap-4 px-4 py-3 items-center bg-chart text-white text-[16px] min-h-[60px] whitespace-normal break-words leading-tight"
-              href={"https://naver.me/5ISL2v5E"}
+              href={'https://naver.me/5ISL2v5E'}
               target="_blank"
             >
               <Image
                 className="rounded-lg"
-                src={"/icons/genie.png"}
+                src={'/icons/genie.png'}
                 alt={`genie logo`}
                 width={30}
                 height={30}
@@ -99,7 +99,7 @@ export default function SupportPage() {
         <p className="mb-2">
           사용하지 않는
           <span className="text-primary font-bold">
-            {" "}
+            {' '}
             벅스/지니 아이디를 기부
           </span>
           받습니다.
@@ -117,13 +117,13 @@ export default function SupportPage() {
         title="서포트 안내"
         button={
           <Link
-            href={"https://naver.me/G65mvn7j"}
+            href={'https://naver.me/G65mvn7j'}
             target="_blank"
             className="flex w-full gap-4 px-4 py-3 items-center bg-chart text-white text-[16px] min-h-[60px] whitespace-normal break-words leading-tight"
           >
             <Image
               className="rounded-lg"
-              src={"/icons/icon.ico"}
+              src={'/icons/icon.ico'}
               alt={`vipwave logo`}
               width={30}
               height={30}
@@ -154,7 +154,7 @@ export default function SupportPage() {
               className="w-[14px] h-[14px] p-0 pt-[4px]"
               onClick={handleCopy}
             >
-              <Copy style={{ width: "12px", height: "12px" }} />
+              <Copy style={{ width: '12px', height: '12px' }} />
             </IconButton>
             <span className="color-primary font-bold underline underline-offset-[3px]">
               카카오뱅크 3333-02-2695844 ㅂㅈㅎ
