@@ -1,20 +1,20 @@
-"use client";
+'use client';
 
-import dayjs from "dayjs";
-import utc from "dayjs/plugin/utc";
-import timezone from "dayjs/plugin/timezone";
-import { Button } from "@/components/ui/button";
-import { ChevronRight } from "lucide-react";
-import { useRouter } from "next/navigation";
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
+import { Button } from '@/components/ui/button';
+import { ChevronRight } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
-dayjs.locale("ko");
+dayjs.locale('ko');
 
 export default function NoticeList(props: { title: string }) {
-  const now = dayjs().tz("Asia/Seoul");
+  const now = dayjs().tz('Asia/Seoul');
 
-  const today = now.format("YYYY년 MM월 DD일");
+  const today = now.format('YYYY년 MM월 DD일');
 
   return (
     <>
@@ -24,6 +24,10 @@ export default function NoticeList(props: { title: string }) {
       </div>
 
       <div>
+        <Notice
+          title="대성(DAESUNG) 'Universe' MV"
+          url="https://www.youtube.com/watch?v=PHToFdx20ac"
+        />
         <Notice
           title="대성(DAESUNG) 'Universe' MV Teaser"
           url="https://youtu.be/mGO0EyPaktQ?si=KWAoRlFt_1-PYc13"
@@ -58,7 +62,7 @@ function Notice(props: { title: string; url: string; isExtra?: boolean }) {
 
   const handleClick = () => {
     if (isExtra) {
-      window.open(url, "_blank", "noopener,noreferrer");
+      window.open(url, '_blank', 'noopener,noreferrer');
     } else {
       router.push(url);
     }
