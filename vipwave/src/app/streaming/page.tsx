@@ -168,7 +168,7 @@ export default function StreamingPage() {
             <div className="absolute top-0 left-0 w-full h-full bg-gray-300 animate-pulse" />
           )}
           <Image
-            src={'/daesung_playlist_v1.png'}
+            src={'/gd_ds_playlist.jpg'}
             alt="streamingList"
             width={550}
             height={500}
