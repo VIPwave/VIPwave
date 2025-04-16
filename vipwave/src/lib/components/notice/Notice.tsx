@@ -25,6 +25,10 @@ export default function NoticeList(props: { title: string }) {
 
       <div>
         <Notice
+          title="G-DRAGON '굿데이 2025' MV Teaser"
+          url="https://youtu.be/FlqwpyEHOf8?feature=shared"
+        />
+        <Notice
           title="대성(DAESUNG) 'Universe' MV"
           url="https://www.youtube.com/watch?v=PHToFdx20ac"
         />
