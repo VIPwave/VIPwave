@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import { fetchOneClickLinks } from '@/apis/fetchOneClick';
-import BlockBtn from '@/components/Button/BlockBtn';
-import Modal from '@/lib/components/modal/modal';
-import { getDeviceType } from '@/lib/detectDevice';
-import { ChartType, DeviceType, PlatformData } from '@/types/oneClick';
-import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { fetchOneClickLinks } from "@/apis/fetchOneClick";
+import BlockBtn from "@/components/Button/BlockBtn";
+import Modal from "@/lib/components/modal/modal";
+import { getDeviceType } from "@/lib/detectDevice";
+import { ChartType, DeviceType, PlatformData } from "@/types/oneClick";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 
 interface streamingLink {
   name: string;
@@ -28,7 +28,7 @@ export default function StreamingPage() {
     showDeviceType: boolean;
   } | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [deviceType, setDeviceType] = useState<string>('');
+  const [deviceType, setDeviceType] = useState<string>("");
   const [imageLoaded, setImageLoaded] = useState(false);
   const [streamingData, setStreamingData] = useState<streamingLink[]>([]);
 
@@ -38,13 +38,13 @@ export default function StreamingPage() {
 
   useEffect(() => {
     if (isModalOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = "auto";
     }
 
     return () => {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = "auto";
     };
   }, [isModalOpen]);
 
@@ -52,15 +52,15 @@ export default function StreamingPage() {
     let links: string[] = [];
 
     if (showDeviceType) {
-      if (deviceType === 'Android') {
+      if (deviceType === "Android") {
         links = site.androidLinks || [];
-      } else if (deviceType === 'iOS') {
+      } else if (deviceType === "iOS") {
         links = site.iphoneLinks || [];
-      } else if (deviceType === 'iPad') {
+      } else if (deviceType === "iPad") {
         links = site.ipadLinks || [];
-      } else if (deviceType === 'Windows') {
+      } else if (deviceType === "Windows") {
         links = site.windowLinks || [];
-      } else if (deviceType === 'Mac') {
+      } else if (deviceType === "Mac") {
         links = site.macLinks || [];
       }
     } else {
@@ -116,7 +116,7 @@ export default function StreamingPage() {
   }, []);
 
   const handleButtonClick = (link: string) => {
-    window.open(link, '_blank');
+    window.open(link, "_blank");
   };
 
   return (
@@ -132,7 +132,7 @@ export default function StreamingPage() {
       <p className="mb-4 text-sm break-keep">☑️ 음원 다운로드 파일 삭제</p>
       <div className="grid grid-cols-2 gap-5 w-full mb-8">
         {streamingData
-          .filter((site) => site.chartType === 'DOMESTIC')
+          .filter((site) => site.chartType === "DOMESTIC")
           .map((site) => (
             <BlockBtn
               key={site.name}
@@ -146,7 +146,7 @@ export default function StreamingPage() {
       <p className="font-bold text-sm mb-4 mt-8">해외 차트 스트리밍</p>
       <div className="grid grid-cols-2 gap-5 w-full mb-5">
         {streamingData
-          .filter((site) => site.chartType === 'GLOBAL')
+          .filter((site) => site.chartType === "GLOBAL")
           .map((site) => (
             <BlockBtn
               key={site.name}
@@ -168,13 +168,13 @@ export default function StreamingPage() {
             <div className="absolute top-0 left-0 w-full h-full bg-gray-300 animate-pulse" />
           )}
           <Image
-            src={'/gd_ds_playlist_v2.jpeg'}
+            src={"/good_day_playlist.png"}
             alt="streamingList"
             width={550}
             height={500}
             priority
             className={`transition-opacity duration-500 object-cover ${
-              imageLoaded ? 'opacity-100' : 'opacity-0'
+              imageLoaded ? "opacity-100" : "opacity-0"
             }`}
             onLoad={() => setImageLoaded(true)}
           />
@@ -194,7 +194,7 @@ export default function StreamingPage() {
                 priority
                 unoptimized
               />
-              {selectedSite.name} 원클릭{' '}
+              {selectedSite.name} 원클릭{" "}
               {selectedSite.showDeviceType && `(${deviceType})`}
             </div>
 
