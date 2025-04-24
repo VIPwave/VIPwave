@@ -1,73 +1,71 @@
-'use client';
+"use client";
 
 import {
   ColumnDef,
   getCoreRowModel,
   useReactTable,
-} from '@tanstack/react-table';
-import TaskTable, { Song } from './ChartTable';
-import Image from 'next/image';
+} from "@tanstack/react-table";
+import TaskTable, { Song } from "./ChartTable";
+import Image from "next/image";
 
 const columns: ColumnDef<Song>[] = [
   {
-    id: 'album_image',
-    accessorKey: 'album_image',
-    header: '',
+    id: "album_image",
+    accessorKey: "album_image",
+    header: "",
     enableSorting: false,
     cell: (row) => {
       const url = String(row.getValue());
       return (
-        <Image
-          src={url}
-          alt="album_image"
-          width={56}
-          height={56}
-          unoptimized
-        />
+        <Image src={url} alt="album_image" width={56} height={56} unoptimized />
       );
     },
-    size: 35,
+    size: 56,
   },
   {
-    accessorKey: 'title',
-    header: '곡 정보',
+    accessorKey: "title",
+    header: "곡 정보",
     enableSorting: false,
     cell: (current) => {
       const title = current.row.original.title;
       const singer = current.row.original.singer;
       return (
         <div>
-          <span className="overflow-hidden text-ellipsis">{title}</span>
-          <div className="text-gray-400">{singer}</div>
+          <span className="overflow-hidden text-ellipsis whitespace-nowrap">
+            {title}
+          </span>
+          <div className="text-gray-400 overflow-hidden text-ellipsis whitespace-nowrap w-[200px]">
+            {singer}
+          </div>
         </div>
       );
     },
     size: 150,
   },
   {
-    accessorKey: 'rank_variance',
-    header: '',
+    accessorKey: "rank_variance",
+    header: "",
     enableSorting: false,
     cell: (current) => {
       const rankVariance = Number(current.row.original.rank_variance);
       const rankType = current.row.original.rank_type;
 
-      if (rankType === 'new') {
+      if (rankType === "new") {
         return <div className="text-center font-bold">NEW</div>;
       }
-      if (rankType === 'static') {
+      if (rankType === "static") {
         return <div className="text-center">-</div>;
       }
 
-      let color = 'text-red-500';
-      let icon = '▲';
+      let color = "text-red-500";
+      let icon = "▲";
 
-      if (rankType === 'up') {
-        color = 'text-red-500';
-        icon = '▲';
-      } else if (rankType === 'down') {
-        color = 'text-blue-500';
-        icon = '▼';
+      if (rankType === "up") {
+        color = "text-red-500";
+        icon = "▲";
+      } else if (rankType === "down") {
+        color = "text-blue-500";
+        icon = "▼";
       }
 
       return (
@@ -77,13 +75,13 @@ const columns: ColumnDef<Song>[] = [
         </div>
       );
     },
-    size: 8,
+    size: 42,
   },
   {
-    accessorKey: 'rank',
+    accessorKey: "rank",
     header: () => <div className="text-center">순위</div>,
     enableSorting: false,
-    size: 8,
+    size: 42,
   },
 ];
 
