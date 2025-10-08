@@ -1,6 +1,6 @@
 'use client';
 
-import { fetchOneClickLinks } from '@/apis/fetchOneClick';
+// import { fetchOneClickLinks } from '@/apis/fetchOneClick';
 import BlockBtn from '@/components/Button/BlockBtn';
 import Modal from '@/lib/components/modal/modal';
 import { getDeviceType } from '@/lib/detectDevice';
