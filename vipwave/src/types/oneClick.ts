@@ -5,7 +5,7 @@ export interface LinkGroup {
   links: string[];
 }
 
-export type PlatformType = 'Melon' | 'Genie' | 'Bugs' | 'Vibe' | 'Flo';
+export type PlatformType = 'Melon' | 'Genie' | 'Bugs' | 'Vibe' | 'Flo' | 'Apple Music' | 'YouTube Music' | 'YouTube' | 'Spotify';
 
 export type ChartType = 'DOMESTIC' | 'GLOBAL';
 export interface PlatformData {
@@ -23,3 +23,4 @@ export type OneClickLinksResponse = {
   code: number;
   message: string;
 };
+
