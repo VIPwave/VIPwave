@@ -1,243 +1,282 @@
-import { PlatformData, ChartType, DeviceType } from "@/types/oneClick";
+import { PlatformData, ChartType, DeviceType } from '@/types/oneClick';
 
 export const MOCK_ONECLICK_DATA: PlatformData[] = [
-    {
-        id: 1,
-        platform: "Melon",
-        logo: "/icons/melon.png",
-        chartType: "DOMESTIC" as ChartType,
-        staffNo: "7",
-        updatedAt: "2025-10-09 12:00",
+  {
+    id: 1,
+    platform: 'Melon',
+    logo: '/icons/melon.png',
+    chartType: 'DOMESTIC' as ChartType,
+    staffNo: '7',
+    updatedAt: '2025-10-09 12:00',
+    links: [
+      {
+        deviceType: 'ANDROID' as DeviceType,
         links: [
-            {
-                deviceType: "ANDROID" as DeviceType,
-                links: [
-                    "https://iii.ad/8064d9",
-                    "https://iii.ad/cb6246",
-                    "https://iii.ad/5cefac",
-                    "https://iii.ad/aabe05",
-                    "https://iii.ad/125b04",
-                    "https://iii.ad/8d73ef"
-                ],
-            },
-            {
-                deviceType: "IPHONE" as DeviceType,
-                links: ["https://iii.ad/4169e9"],
-            },
-            {
-                deviceType: "IPAD" as DeviceType,
-                links: ["https://iii.ad/bb40e0"]
-            },
-            {
-                deviceType: "WINDOWS" as DeviceType,
-                links: [
-                    "https://iii.ad/ab0830",
-                    "https://iii.ad/96304b",
-                    "https://iii.ad/cb04ac",
-                    "https://iii.ad/4b2c2b",
-                    "https://iii.ad/5b50c9",
-                    "https://iii.ad/3c1ae8"
-                ],
-            },
-            {
-                deviceType: "MAC" as DeviceType,
-                links: [
-                    "https://iii.ad/ac1252",
-                    "https://iii.ad/b56feb",
-                    "https://iii.ad/bec306",
-                    "https://iii.ad/8b3aab",
-                    "https://iii.ad/cadab9",
-                    "https://iii.ad/7abda3"
-                ],
-            },
+          'melonapp://play?menuid=0&ctype=1&cid=38589554,38242510,38856350,38766245,38164895,38766247',
+          'melonapp://play?menuid=0&ctype=1&cid=38766244,38589556,38589559,38766246,38856350,38242510',
+          'melonapp://play?menuid=0&ctype=1&cid=38589554,38766245,38589557,38766250,38589558,38589555',
+          'melonapp://play?menuid=0&ctype=1&cid=38589554,38242510,38856350,38766245,38164895,38766248',
+          'melonapp://play?menuid=0&ctype=1&cid=38589556,38589559,38766243,38242510,38589554,38766245',
+          'melonapp://play?menuid=0&ctype=1&cid=38589557,38766249,38589558,38589555,30461396,34845949',
         ],
-    },
-    {
-        id: 2,
-        platform: "Bugs",
-        logo: "/icons/bugs.png",
-        chartType: "DOMESTIC" as ChartType,
-        staffNo: "7",
-        updatedAt: "2025-10-09 12:15",
+      },
+      {
+        deviceType: 'IPHONE' as DeviceType,
         links: [
-            {
-                deviceType: "ANDROID" as DeviceType,
-                links: ["https://iii.ad/83319c"],
-            },
-            {
-                deviceType: "IPHONE" as DeviceType,
-                links: ["https://iii.ad/83319c"],
-            },
-            {
-                deviceType: "IPAD" as DeviceType,
-                links: ["https://iii.ad/83319c"],
-            },
-            {
-                deviceType: "WINDOWS" as DeviceType,
-                links: ["https://iii.ad/f29233"]
-            },
-            {
-                deviceType: "MAC" as DeviceType,
-                links: ["https://iii.ad/f29233"]
-            }
+          'melonapp://play/?menuid=0&ctype=1&cid=38589554,38242510,38856350,38766245,38164895,38766247,38766244,38589556,38589559,38766246,38856350,38242510,38589554,38766245,38589557,38766250,38589558,38589555,38589554,38242510,38856350,38766245,38164895,38766248,38589556,38589559,38766243,38242510,38589554,38766245,38589557,38766249,38589558,38589555,30461396,34845949',
         ],
-    },
-    {
-        id: 3,
-        platform: "Genie",
-        logo: "/icons/genie.png",
-        chartType: "DOMESTIC" as ChartType,
-        staffNo: "7",
-        updatedAt: "2025-10-09 12:10",
+      },
+      {
+        deviceType: 'IPAD' as DeviceType,
         links: [
-            {
-                deviceType: "ANDROID" as DeviceType,
-                links: ["https://iii.ad/ff9f86"],
-            },
-            {
-                deviceType: "IPHONE" as DeviceType,
-                links: ["https://iii.ad/7e04f0"],
-            },
-            {
-                deviceType: "IPAD" as DeviceType,
-                links: ["https://iii.ad/7e04f0"],
-            },
-            {
-                deviceType: "WINDOWS" as DeviceType,
-                links: ["https://iii.ad/888d91"],
-            },
-            {
-                deviceType: "MAC" as DeviceType,
-                links: ["https://iii.ad/888d91"],
-            },
+          'melonipad://play/?ctype=1&menuid=0&cid=38589554,38242510,38856350,38766245,38164895,38766247,38766244,38589556,38589559,38766246,38856350,38242510,38589554,38766245,38589557,38766250,38589558,38589555,38589554,38242510,38856350,38766245,38164895,38766248,38589556,38589559,38766243,38242510,38589554,38766245,38589557,38766249,38589558,38589555,30461396,34845949',
         ],
-    },
-    {
-        id: 4,
-        platform: "Vibe",
-        logo: "/icons/vibe.png",
-        chartType: "DOMESTIC" as ChartType,
-        staffNo: "7",
-        updatedAt: "2025-10-09 12:30",
+      },
+      {
+        deviceType: 'WINDOWS' as DeviceType,
         links: [
-            {
-                deviceType: "ANDROID" as DeviceType,
-                links: [
-                    "https://iii.ad/ce922c",
-                    "https://iii.ad/5925bb",
-                    "https://iii.ad/2cf1f6",
-                    "https://iii.ad/67d76a",
-                    "https://iii.ad/a52be1",
-                    "https://iii.ad/f7608d"
-                ],
-            },
-            {
-                deviceType: "IPHONE" as DeviceType,
-                links: [
-                    "https://iii.ad/ce922c",
-                    "https://iii.ad/5925bb",
-                    "https://iii.ad/2cf1f6",
-                    "https://iii.ad/67d76a",
-                    "https://iii.ad/a52be1",
-                    "https://iii.ad/f7608d"
-                ],
-            },
-            {
-                deviceType: "IPAD" as DeviceType,
-                links: [
-                    "https://iii.ad/ce922c",
-                    "https://iii.ad/5925bb",
-                    "https://iii.ad/2cf1f6",
-                    "https://iii.ad/67d76a",
-                    "https://iii.ad/a52be1",
-                    "https://iii.ad/f7608d"
-                ],
-            }
+          'melonapp://play?cType=1&menuId=1000002721&cList=38589554,38242510,38856350,38766245,38164895,38766247&cacheKey=16340359914433505542853',
+          'melonapp://play?cType=1&menuId=1000002721&cList=38766244,38589556,38589559,38766246,38856350,38242510&cacheKey=16340359914433505542853',
+          'melonapp://play?cType=1&menuId=1000002721&cList=38589554,38766245,38589557,38766250,38589558,38589555&cacheKey=16340359914433505542853',
+          'melonapp://play?cType=1&menuId=1000002721&cList=38589554,38242510,38856350,38766245,38164895,38766248&cacheKey=16340359914433505542853',
+          'melonapp://play?cType=1&menuId=1000002721&cList=38589556,38589559,38766243,38242510,38589554,38766245&cacheKey=16340359914433505542853',
+          'melonapp://play?cType=1&menuId=1000002721&cList=38589557,38766249,38589558,38589555,30461396,34845949&cacheKey=16340359914433505542853',
         ],
-    },
-    {
-        id: 5,
-        platform: "Flo",
-        logo: "/icons/flo.png",
-        chartType: "DOMESTIC" as ChartType,
-        staffNo: "7",
-        updatedAt: "2025-10-09 12:20",
+      },
+      {
+        deviceType: 'MAC' as DeviceType,
         links: [
-            {
-                deviceType: "ANDROID" as DeviceType,
-                links: ["https://iii.ad/5a1539"],
-            },
-            {
-                deviceType: "IPHONE" as DeviceType,
-                links: ["https://iii.ad/5a1539"],
-            },
-            {
-                deviceType: "IPAD" as DeviceType,
-                links: ["https://iii.ad/5a1539"],
-            },
-            {
-                deviceType: "MAC" as DeviceType,
-                links: ["https://iii.ad/5a1539"],
-            },
+          'melonplayer://play?menuid=0&cflag=1&cid=38589554,38242510,38856350,38766245,38164895,38766247',
+          'melonplayer://play?menuid=0&cflag=1&cid=38766244,38589556,38589559,38766246,38856350,38242510',
+          'melonplayer://play?menuid=0&cflag=1&cid=38589554,38766245,38589557,38766250,38589558,38589555',
+          'melonplayer://play?menuid=0&cflag=1&cid=38589554,38242510,38856350,38766245,38164895,38766248',
+          'melonplayer://play?menuid=0&cflag=1&cid=38589556,38589559,38766243,38242510,38589554,38766245',
+          'melonplayer://play?menuid=0&cflag=1&cid=38589557,38766249,38589558,38589555,30461396,34845949',
         ],
-    },
-    {
-        id: 6,
-        platform: "Spotify",
-        logo: "/icons/spotify.png",
-        chartType: "GLOBAL" as ChartType,
-        staffNo: "7",
-        updatedAt: "2025-10-09 13:20",
-        links: (['ANDROID','IPHONE','IPAD','WINDOWS','MAC'] as DeviceType[]).map(d => ({
-            deviceType: d,
-            links: [
-                "https://open.spotify.com/playlist/0SRJ4lqBswGsTu3LQJ5dje?si=A-uNGK12QqizKVmu6vbw5Q"
-            ]
-        }))
-    },
+      },
+    ],
+  },
+  {
+    id: 2,
+    platform: 'Bugs',
+    logo: '/icons/bugs.png',
+    chartType: 'DOMESTIC' as ChartType,
+    staffNo: '7',
+    updatedAt: '2025-10-09 12:15',
+    links: [
+      {
+        deviceType: 'ANDROID' as DeviceType,
+        links: [
+          'bugs3://app/tracks/lists?title=전체듣기&miniplay=Y&track_ids=6290922|6272222|124194655|33498825|6268510|33498827|33498824|6290924|6290927|33498826|124194655|6272222|6290922|33498825|6290925|33498830|6290926|6290923|6290922|6272222|124194655|33498825|6268510|33498828|6290924|6290927|33498823|6272222|6290922|33498825|6290925|33498829|6290926|6290923|30680805|6155716',
+        ],
+      },
+      {
+        deviceType: 'IPHONE' as DeviceType,
+        links: [
+          'bugs3://app/tracks/lists?title=전체듣기&miniplay=Y&track_ids=6290922|6272222|124194655|33498825|6268510|33498827|33498824|6290924|6290927|33498826|124194655|6272222|6290922|33498825|6290925|33498830|6290926|6290923|6290922|6272222|124194655|33498825|6268510|33498828|6290924|6290927|33498823|6272222|6290922|33498825|6290925|33498829|6290926|6290923|30680805|6155716',
+        ],
+      },
+      {
+        deviceType: 'IPAD' as DeviceType,
+        links: [
+          'bugs3://app/tracks/lists?title=전체듣기&miniplay=Y&track_ids=6290922|6272222|124194655|33498825|6268510|33498827|33498824|6290924|6290927|33498826|124194655|6272222|6290922|33498825|6290925|33498830|6290926|6290923|6290922|6272222|124194655|33498825|6268510|33498828|6290924|6290927|33498823|6272222|6290922|33498825|6290925|33498829|6290926|6290923|30680805|6155716',
+        ],
+      },
+      {
+        deviceType: 'WINDOWS' as DeviceType,
+        links: [
+          'https://music.bugs.co.kr/newPlayer?trackId=6290922,6272222,124194655,33498825,6268510,33498827,33498824,6290924,6290927,33498826,124194655,6272222,6290922,33498825,6290925,33498830,6290926,6290923,6290922,6272222,124194655,33498825,6268510,33498828,6290924,6290927,33498823,6272222,6290922,33498825,6290925,33498829,6290926,6290923,30680805,6155716',
+        ],
+      },
+      {
+        deviceType: 'MAC' as DeviceType,
+        links: [
+          'https://music.bugs.co.kr/newPlayer?trackId=6290922,6272222,124194655,33498825,6268510,33498827,33498824,6290924,6290927,33498826,124194655,6272222,6290922,33498825,6290925,33498830,6290926,6290923,6290922,6272222,124194655,33498825,6268510,33498828,6290924,6290927,33498823,6272222,6290922,33498825,6290925,33498829,6290926,6290923,30680805,6155716',
+        ],
+      },
+    ],
+  },
+  {
+    id: 3,
+    platform: 'Genie',
+    logo: '/icons/genie.png',
+    chartType: 'DOMESTIC' as ChartType,
+    staffNo: '7',
+    updatedAt: '2025-10-09 12:10',
+    links: [
+      {
+        deviceType: 'ANDROID' as DeviceType,
+        links: [
+          'cromegenie://scan/?landing_type=31&landing_target=109217637;108434388;109911280;109687657;108221081;109687659;109687656;109217639;109217642;109687658;109911280;108434388;109217637;109687657;109217640;109687662;109217641;109217638;109217637;108434388;109911280;109687657;108221081;109687660;109217639;109217642;109687655;108434388;109217637;109687657;109217640;109687661;109217641;109217638;87193685;96482850',
+        ],
+      },
+      {
+        deviceType: 'IPHONE' as DeviceType,
+        links: [
+          'ktolleh00167://landing/?landing_type=31&landing_target=109217637;108434388;109911280;109687657;108221081;109687659;109687656;109217639;109217642;109687658;109911280;108434388;109217637;109687657;109217640;109687662;109217641;109217638;109217637;108434388;109911280;109687657;108221081;109687660;109217639;109217642;109687655;108434388;109217637;109687657;109217640;109687661;109217641;109217638;87193685;96482850',
+        ],
+      },
+      {
+        deviceType: 'IPAD' as DeviceType,
+        links: [
+          'ktolleh00167://landing/?landing_type=31&landing_target=109217637;108434388;109911280;109687657;108221081;109687659;109687656;109217639;109217642;109687658;109911280;108434388;109217637;109687657;109217640;109687662;109217641;109217638;109217637;108434388;109911280;109687657;108221081;109687660;109217639;109217642;109687655;108434388;109217637;109687657;109217640;109687661;109217641;109217638;87193685;96482850',
+        ],
+      },
+      {
+        deviceType: 'WINDOWS' as DeviceType,
+        links: [
+          'https://www.genie.co.kr/player/shareProcessV2?xgnm=109217637;108434388;109911280;109687657;108221081;109687659;109687656;109217639;109217642;109687658;109911280;108434388;109217637;109687657;109217640;109687662;109217641;109217638;109217637;108434388;109911280;109687657;108221081;109687660;109217639;109217642;109687655;108434388;109217637;109687657;109217640;109687661;109217641;109217638;87193685;96482850',
+        ],
+      },
+      {
+        deviceType: 'MAC' as DeviceType,
+        links: [
+          'https://www.genie.co.kr/player/shareProcessV2?xgnm=109217637;108434388;109911280;109687657;108221081;109687659;109687656;109217639;109217642;109687658;109911280;108434388;109217637;109687657;109217640;109687662;109217641;109217638;109217637;108434388;109911280;109687657;108221081;109687660;109217639;109217642;109687655;108434388;109217637;109687657;109217640;109687661;109217641;109217638;87193685;96482850',
+        ],
+      },
+    ],
+  },
+  {
+    id: 4,
+    platform: 'Vibe',
+    logo: '/icons/vibe.png',
+    chartType: 'DOMESTIC' as ChartType,
+    staffNo: '7',
+    updatedAt: '2025-10-09 12:30',
+    links: [
+      {
+        deviceType: 'ANDROID' as DeviceType,
+        links: [
+          'vibe://listen?version=3&trackIds=90043643,87830018,92927019,92261864,87661515,92261866',
+          'vibe://listen?version=3&trackIds=92261863,90043645,90043648,92261865,92927019,87830018',
+          'vibe://listen?version=3&trackIds=90043643,92261864,90043646,92261869,90043647,90043644',
+          'vibe://listen?version=3&trackIds=90043643,87830018,92927019,92261864,87661515,92261867',
+          'vibe://listen?version=3&trackIds=90043645,90043648,92261862,87830018,90043643,92261864',
+          'vibe://listen?version=3&trackIds=90043646,92261868,90043647,90043644,17840023,54727356',
+        ],
+      },
+      {
+        deviceType: 'IPHONE' as DeviceType,
+        links: [
+          'vibe://listen?version=3&trackIds=90043643,87830018,92927019,92261864,87661515,92261866',
+          'vibe://listen?version=3&trackIds=92261863,90043645,90043648,92261865,92927019,87830018',
+          'vibe://listen?version=3&trackIds=90043643,92261864,90043646,92261869,90043647,90043644',
+          'vibe://listen?version=3&trackIds=90043643,87830018,92927019,92261864,87661515,92261867',
+          'vibe://listen?version=3&trackIds=90043645,90043648,92261862,87830018,90043643,92261864',
+          'vibe://listen?version=3&trackIds=90043646,92261868,90043647,90043644,17840023,54727356',
+        ],
+      },
+      {
+        deviceType: 'IPAD' as DeviceType,
+        links: [
+          'vibe://listen?version=3&trackIds=90043643,87830018,92927019,92261864,87661515,92261866',
+          'vibe://listen?version=3&trackIds=92261863,90043645,90043648,92261865,92927019,87830018',
+          'vibe://listen?version=3&trackIds=90043643,92261864,90043646,92261869,90043647,90043644',
+          'vibe://listen?version=3&trackIds=90043643,87830018,92927019,92261864,87661515,92261867',
+          'vibe://listen?version=3&trackIds=90043645,90043648,92261862,87830018,90043643,92261864',
+          'vibe://listen?version=3&trackIds=90043646,92261868,90043647,90043644,17840023,54727356',
+        ],
+      },
+    ],
+  },
+  {
+    id: 5,
+    platform: 'Flo',
+    logo: '/icons/flo.png',
+    chartType: 'DOMESTIC' as ChartType,
+    staffNo: '7',
+    updatedAt: '2025-10-09 12:20',
+    links: [
+      {
+        deviceType: 'ANDROID' as DeviceType,
+        links: [
+          'flomusic://play/track?ids=530645185,520959540,537473555,535259643,518364479,535259645,535259642,530645187,530645190,535259644,537473555,520959540,530645185,535259643,530645188,535259648,530645189,530645186,530645185,520959540,537473555,535259643,518364479,535259646,530645187,530645190,535259641,520959540,530645185,535259643,530645188,535259647,530645189,530645186,30680805,452882194',
+        ],
+      },
+      {
+        deviceType: 'IPHONE' as DeviceType,
+        links: [
+          'flomusic://play/track?ids=530645185,520959540,537473555,535259643,518364479,535259645,535259642,530645187,530645190,535259644,537473555,520959540,530645185,535259643,530645188,535259648,530645189,530645186,530645185,520959540,537473555,535259643,518364479,535259646,530645187,530645190,535259641,520959540,530645185,535259643,530645188,535259647,530645189,530645186,30680805,452882194',
+        ],
+      },
+      {
+        deviceType: 'IPAD' as DeviceType,
+        links: [
+          'flomusic://play/track?ids=530645185,520959540,537473555,535259643,518364479,535259645,535259642,530645187,530645190,535259644,537473555,520959540,530645185,535259643,530645188,535259648,530645189,530645186,530645185,520959540,537473555,535259643,518364479,535259646,530645187,530645190,535259641,520959540,530645185,535259643,530645188,535259647,530645189,530645186,30680805,452882194',
+        ],
+      },
+      {
+        deviceType: 'MAC' as DeviceType,
+        links: [
+          'flomusic://play/track?ids=530645185,520959540,537473555,535259643,518364479,535259645,535259642,530645187,530645190,535259644,537473555,520959540,530645185,535259643,530645188,535259648,530645189,530645186,530645185,520959540,537473555,535259643,518364479,535259646,530645187,530645190,535259641,520959540,530645185,535259643,530645188,535259647,530645189,530645186,30680805,452882194',
+        ],
+      },
+    ],
+  },
+  {
+    id: 6,
+    platform: 'Spotify',
+    logo: '/icons/spotify.png',
+    chartType: 'GLOBAL' as ChartType,
+    staffNo: '7',
+    updatedAt: '2025-10-09 13:20',
+    links: (
+      ['ANDROID', 'IPHONE', 'IPAD', 'WINDOWS', 'MAC'] as DeviceType[]
+    ).map((d) => ({
+      deviceType: d,
+      links: [
+        'https://open.spotify.com/playlist/0SRJ4lqBswGsTu3LQJ5dje?si=A-uNGK12QqizKVmu6vbw5Q',
+      ],
+    })),
+  },
 
-    {
-        id: 7,
-        platform: "Apple Music",
-        logo: "/icons/appleMusic.png",
-        chartType: "GLOBAL" as ChartType,
-        staffNo: "7",
-        updatedAt: "2025-10-09 13:10",
-        links: (['ANDROID','IPHONE','IPAD','WINDOWS','MAC'] as DeviceType[]).map(d => ({
-            deviceType: d,
-            links: [
-                "https://music.apple.com/kr/playlist/%C3%BCbermensch/pl.u-leyl09ATM6JD50p"
-            ]
-        }))
-    },
+  {
+    id: 7,
+    platform: 'Apple Music',
+    logo: '/icons/appleMusic.png',
+    chartType: 'GLOBAL' as ChartType,
+    staffNo: '7',
+    updatedAt: '2025-10-09 13:10',
+    links: (
+      ['ANDROID', 'IPHONE', 'IPAD', 'WINDOWS', 'MAC'] as DeviceType[]
+    ).map((d) => ({
+      deviceType: d,
+      links: [
+        'https://music.apple.com/kr/playlist/%C3%BCbermensch/pl.u-leyl09ATM6JD50p',
+      ],
+    })),
+  },
 
-    {
-        id: 8,
-        platform: "YouTube Music",
-        logo: "/icons/youtubeMusic.png",
-        chartType: "GLOBAL" as ChartType,
-        staffNo: "7",
-        updatedAt: "2025-10-09 13:10",
-        links: (['ANDROID','IPHONE','IPAD','WINDOWS','MAC'] as DeviceType[]).map(d => ({
-            deviceType: d,
-            links: [
-                "https://music.youtube.com/playlist?list=PL7Q0IDeVJ8kS3HoGBiajTRNV5deo8wMHA&si=fVz_WhTuRlOjt0fJ"
-            ]
-        }))
-
-    },
-    {
-        id: 9,
-        platform: "YouTube",
-        logo: "/icons/youtube.png",
-        chartType: "GLOBAL" as ChartType,
-        staffNo: "7",
-        updatedAt: "2025-10-09 13:00",
-        links: (['ANDROID','IPHONE','IPAD','WINDOWS','MAC'] as DeviceType[]).map(d => ({
-            deviceType: d,
-            links: [
-                "https://youtube.com/playlist?list=PL7Q0IDeVJ8kS3HoGBiajTRNV5deo8wMHA&feature=shared"
-            ]
-        }))
-    },
+  {
+    id: 8,
+    platform: 'YouTube Music',
+    logo: '/icons/youtubeMusic.png',
+    chartType: 'GLOBAL' as ChartType,
+    staffNo: '7',
+    updatedAt: '2025-10-09 13:10',
+    links: (
+      ['ANDROID', 'IPHONE', 'IPAD', 'WINDOWS', 'MAC'] as DeviceType[]
+    ).map((d) => ({
+      deviceType: d,
+      links: [
+        'https://music.youtube.com/playlist?list=PL7Q0IDeVJ8kS3HoGBiajTRNV5deo8wMHA&si=fVz_WhTuRlOjt0fJ',
+      ],
+    })),
+  },
+  {
+    id: 9,
+    platform: 'YouTube',
+    logo: '/icons/youtube.png',
+    chartType: 'GLOBAL' as ChartType,
+    staffNo: '7',
+    updatedAt: '2025-10-09 13:00',
+    links: (
+      ['ANDROID', 'IPHONE', 'IPAD', 'WINDOWS', 'MAC'] as DeviceType[]
+    ).map((d) => ({
+      deviceType: d,
+      links: [
+        'https://youtube.com/playlist?list=PL7Q0IDeVJ8kS3HoGBiajTRNV5deo8wMHA&feature=shared',
+      ],
+    })),
+  },
 ];
